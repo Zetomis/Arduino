@@ -11,8 +11,8 @@ int L_PWM = 6;
 char state;
 int currentVoltage = 0;
 
-const ACCELERATION = 5;
-const FRACTION = 15;
+const int ACCELERATION = 5;
+const int FRACTION = 15;
 
 void setup() {
   //Setup BTS's pins
@@ -57,7 +57,7 @@ void loop() {
 void moveForward() {
   analogWrite(L_PWM, 0);
   increaseCurrentVoltage();
-  analogWrite(R_PWM, i);
+  analogWrite(R_PWM, currentVoltage);
 }
 
 void moveBackward() {
